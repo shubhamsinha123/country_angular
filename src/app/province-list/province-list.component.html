@@ -1,7 +1,7 @@
 <div *ngIf="provinces.length" class='text-center mx-auto pt-3' style='max-width: 300px'>
   <h3>Provinces</h3>
   <input type='text' class='form-control mb-3' (keyup)="searchTextChange($event)" name='searchText' placeholder='Type State name to filter' style='max-width: 300px;' />
-  <p *ngFor="let province of provinces | caseInsensitiveFilter: searchText">
+  <p *ngFor="let province of provinces | caseInsensitiveFilter: searchText" class='mx-3 text-start'>
     <a routerLink="/cities/{{countryName}}/{{province}}">{{ province }}</a>
   </p>
 </div>

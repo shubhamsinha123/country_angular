@@ -3,7 +3,7 @@
     <h3>Cities in {{ province }}, {{ countryName }}</h3>
     <input type='text' class='form-control mb-3' (keyup)="searchTextChange($event)" name='searchText' placeholder='Type City name to filter' />
     <div *ngFor="let city of cities | caseInsensitiveFilter: searchText">
-      <p class='small'>
+      <p class='small mx-3'>
         {{ city }}
       </p>
     </div>

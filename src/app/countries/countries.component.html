@@ -1,5 +1,5 @@
 <div class='row'>
-  <div class='col-sm-4 bg-light'>
+  <div class='col-sm-4 bg-light pt-4'>
     <input type='text' class='form-control mb-3' (keyup)="searchCountryChange($event)" name='searchCountry' placeholder='Type Country name to filter' />
     <div *ngFor="let country of countries | caseInsensitiveFilter: searchCountry">
       <p class='small'>
