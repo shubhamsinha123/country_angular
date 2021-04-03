@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ProvinceComponent } from './province.component';
+import { CommonUseModule } from '../common-use/common-use.module';
 
 const routes: Routes =[
   {path:'', component:ProvinceComponent},
@@ -9,11 +10,13 @@ const routes: Routes =[
 
 @NgModule({
   declarations: [
-    ProvinceComponent
+    ProvinceComponent,
+    
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    CommonUseModule
   ]
 })
 export class BooklistModule { }
