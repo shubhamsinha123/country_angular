@@ -1,0 +1,17 @@
+<div class='row'>
+  <div class='col-sm-4 bg-light'>
+    <input type='text' class='form-control mb-3' (keyup)="searchCountryChange($event)" name='searchCountry' placeholder='Type Country name to filter' />
+    <div *ngFor="let country of countries">
+      <p *ngIf="country.toLowerCase().includes(searchCountry.toLowerCase())" class='small'>
+        <button class='btn btn-link' (click)="getCountryDetails(country)">{{ country }}</button>
+      </p>
+    </div>
+  </div>
+  <div class='col-sm-8'>
+    <h2 class='text-center'>{{ countryName }}</h2>
+    <div class='text-center mx-auto' style='max-width: 300px;'>
+      <img src="{{ flagUrl }}" alt="{{ countryName }}" width="300" />
+    </div>
+    <app-province-list [selectedCountry]="countryName" [provinceList]="provinces"></app-province-list>
+  </div>
+</div>
