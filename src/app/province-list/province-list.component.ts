@@ -14,6 +14,10 @@ export class ProvinceListComponent implements OnInit {
     this.provinces = val;
   }
 
+  get provinceList(): Array<string> {
+    return this.provinces
+  }
+
   @Input() set selectedCountry(val) {
     this.countryName = val;
   }

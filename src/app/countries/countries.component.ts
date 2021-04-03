@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
 
 @Component({
@@ -32,12 +32,11 @@ export class CountriesComponent implements OnInit {
     this.dataService.fetchCountryDetails(countryName, 'flag').subscribe(data => {
       this.flagUrl = data['data'].flag;
       this.countryName = data['data'].name;
-      console.log('data: ', this.flagUrl);
     })
     
     this.dataService.fetchCountryDetails(countryName, 'states').subscribe(data => {
+      this.provinces = []
       data['data'].states.map(province => this.provinces.push(province.name))
-      console.log('data: ', this.provinces);
     })
   } 
 }
