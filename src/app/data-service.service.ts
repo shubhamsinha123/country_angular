@@ -37,10 +37,6 @@ export class DataServiceService {
     return countries;
   }
 
-  fetchCountryDetails(countryName, dataPoint) {
-    return this.httpPostData(`${this.baseUrl}${this.endpoints[dataPoint]}`, { country: countryName });
-  }
-
   fetchCitiesList(countryName, province) {
     const cities = [];
     this.httpPostData(`${this.baseUrl}${this.endpoints.cities}`, { country: countryName, state: province }).subscribe(data => {
@@ -51,5 +47,9 @@ export class DataServiceService {
       }
     });
     return cities;
+  }
+
+  fetchCountryDetails(countryName, dataPoint) {
+    return this.httpPostData(`${this.baseUrl}${this.endpoints[dataPoint]}`, { country: countryName });
   }
 }

@@ -4,7 +4,7 @@ import { CountriesComponent } from './countries/countries.component';
 
 const routes: Routes = [
   { path: '', component: CountriesComponent },
-  { path: 'cities/:country/:province', loadChildren:() => import('./province/province.module').then(m => m.BooklistModule) },
+  { path: 'cities/:country/:province', loadChildren:() => import('./province/province.module').then(m => m.ProvinceModule) },
   { path: '**', component: CountriesComponent }
 ]
 

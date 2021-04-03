@@ -19,4 +19,4 @@ const routes: Routes =[
     CommonUseModule
   ]
 })
-export class BooklistModule { }
+export class ProvinceModule { }
