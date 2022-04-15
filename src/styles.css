@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.btn-link{
+    text-decoration: none !important;
+    color: #a6333e !important;
+}
+a{
+    text-decoration: none !important;
+    color: #5e035e;
+}
