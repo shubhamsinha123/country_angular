@@ -9,6 +9,7 @@
   </div>
   <div class='col-sm-8'>
     <h2 class='text-center'>{{ countryName }}</h2>
+    <h4 *ngIf="capital">Capital City: {{ capital }}</h4>
     <div class='text-center mx-auto' style='max-width: 300px;'>
       <img src="{{ flagUrl }}" alt="{{ countryName }}" width="300" />
     </div>
