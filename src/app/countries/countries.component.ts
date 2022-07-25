@@ -12,12 +12,16 @@ export class CountriesComponent implements OnInit {
   searchProvince: string = '';
   flagUrl = '';
   countryName = '';
+  capital: string = '';
   provinces = [];
 
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit(): void {
     this.countries = this.dataService.fetchCountryList();
+    this.dataService.fetchCountryDetails(this.countryName, 'capital').subscribe(data => {
+      this.capital = data['data'].capital;
+    })
   }
 
   searchCountryChange(event) {
@@ -32,6 +36,7 @@ export class CountriesComponent implements OnInit {
     this.dataService.fetchCountryDetails(countryName, 'flag').subscribe(data => {
       this.flagUrl = data['data'].flag;
       this.countryName = data['data'].name;
+      this.capital = data['data'].capital;
     })
     
     this.dataService.fetchCountryDetails(countryName, 'states').subscribe(data => {
